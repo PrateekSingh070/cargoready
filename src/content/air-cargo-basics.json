@@ -1,0 +1,845 @@
+{
+  "id": "air-cargo-basics",
+  "title": "Air Cargo Dangerous Goods Basics",
+  "description": "Practise spotting dangerous goods, reading labels, and making decisions from check-in to the cargo hold.",
+  "modules": [
+    {
+      "id": "recognising-dangerous-goods",
+      "title": "Recognising dangerous goods",
+      "summary": "Meet the nine hazard classes and spot clues hiding in everyday cargo descriptions.",
+      "estMinutes": 8,
+      "icon": "box",
+      "tone": "orange",
+      "unlockRule": {
+        "type": "open"
+      },
+      "lessons": [
+        {
+          "id": "nine-hazard-classes",
+          "type": "info",
+          "title": "Meet the nine hazard classes",
+          "body": "Hazard classes describe the kinds of risks materials can present in transport. Use these examples to recognise possible dangerous goods. Actual classification depends on the specific product and its properties.",
+          "image": "box",
+          "funFact": "Your whipped cream might deserve a second look. Some whipped cream dispensers are aerosols, which belong in the gases class.",
+          "groups": [
+            {
+              "heading": "1. Explosives",
+              "examples": "Fireworks and ammunition."
+            },
+            {
+              "heading": "2. Gases",
+              "examples": "Aerosols and carbon dioxide cartridges."
+            },
+            {
+              "heading": "3. Flammable liquids",
+              "examples": "Some paints, paint thinners, and perfumes."
+            },
+            {
+              "heading": "4. Flammable solids and related hazards",
+              "examples": "Strike-anywhere matches. This class also includes substances liable to spontaneous combustion and substances that release flammable gas when wet."
+            },
+            {
+              "heading": "5. Oxidizers and organic peroxides",
+              "examples": "Some concentrated hydrogen peroxide products and some curing products."
+            },
+            {
+              "heading": "6. Toxic and infectious substances",
+              "examples": "Some pesticides and certain infectious substances."
+            },
+            {
+              "heading": "7. Radioactive material",
+              "examples": "Certain materials used in nuclear medicine."
+            },
+            {
+              "heading": "8. Corrosive substances",
+              "examples": "Some acids and wet-cell battery electrolyte."
+            },
+            {
+              "heading": "9. Miscellaneous dangerous goods",
+              "examples": "Lithium batteries and dry ice."
+            }
+          ],
+          "source": {
+            "label": "FAA hazard class reference",
+            "url": "https://www.faa.gov/hazmat/what_is_hazmat"
+          }
+        },
+        {
+          "id": "event-supplies",
+          "type": "scenario",
+          "title": "The mystery event supplies",
+          "intro": "A carton described as “event supplies” arrives at the desk. The sender mentions that it includes spray paint cans. What does that detail tell you?",
+          "nodes": [
+            {
+              "id": "at-the-desk",
+              "text": "The description says “event supplies,” but the sender confirms the spray paint is in aerosol cans.",
+              "illustration": "box",
+              "choices": [
+                {
+                  "label": "Flag the aerosol for review by the person responsible for dangerous goods.",
+                  "nextNodeId": "handoff",
+                  "scoreDelta": 10,
+                  "feedback": "Good catch. The party banner can wait. An aerosol is a clue that the contents may be regulated as dangerous goods.",
+                  "isSafe": true
+                },
+                {
+                  "label": "Treat the carton as ordinary cargo because the description only says “event supplies.”",
+                  "nextNodeId": "missed",
+                  "scoreDelta": -5,
+                  "feedback": "That description is too broad. The confirmed aerosol matters when identifying possible dangerous goods.",
+                  "isSafe": false
+                }
+              ]
+            },
+            {
+              "id": "handoff",
+              "text": "The reviewer asks why you flagged the carton. What do you include in your handoff?",
+              "illustration": "tag",
+              "choices": [
+                {
+                  "label": "Share the original description and the sender's confirmation that it includes aerosol spray paint.",
+                  "nextNodeId": "review",
+                  "scoreDelta": 10,
+                  "feedback": "That gives the reviewer something useful to work with. The confirmed product detail explains why you flagged the carton.",
+                  "isSafe": true
+                },
+                {
+                  "label": "Repeat “event supplies” and leave the product detail out.",
+                  "nextNodeId": "incomplete-handoff",
+                  "scoreDelta": 0,
+                  "feedback": "The reviewer still needs to know what raised your concern. Include the specific detail the sender confirmed.",
+                  "isSafe": false
+                }
+              ]
+            },
+            {
+              "id": "review",
+              "text": "The reviewer has the original description and the confirmed product detail.",
+              "illustration": "check",
+              "choices": [],
+              "outcome": {
+                "summary": "You spotted the clue and made a clear handoff.",
+                "whatWentRight": "You flagged the carton and passed along the specific clue that prompted the review.",
+                "whatToReview": "Recognising a clue comes before confirming the product's classification."
+              }
+            },
+            {
+              "id": "incomplete-handoff",
+              "text": "The reviewer has to ask what the carton contains.",
+              "illustration": "tag",
+              "choices": [],
+              "outcome": {
+                "summary": "The flag got through. The important detail stayed at the desk.",
+                "whatWentRight": "You spotted the aerosol and flagged the carton for review.",
+                "whatToReview": "When you hand off a case, include the product detail that made you flag it."
+              }
+            },
+            {
+              "id": "missed",
+              "text": "The description hides a clue you already had.",
+              "illustration": "shield",
+              "choices": [],
+              "outcome": {
+                "summary": "The carton escaped review in this scenario.",
+                "whatWentRight": "You noticed the description used on the carton.",
+                "whatToReview": "A broad description can contain many kinds of products. Pay attention to specific clues such as an aerosol can."
+              }
+            }
+          ]
+        },
+        {
+          "id": "sort-the-samples",
+          "type": "dragdrop",
+          "title": "Sort the samples",
+          "prompt": "Match the named examples to the hazard classes from the earlier lesson.",
+          "items": [
+            {
+              "id": "aerosol-spray-paint",
+              "label": "Aerosol spray paint"
+            },
+            {
+              "id": "flammable-paint-thinner",
+              "label": "Flammable paint thinner"
+            },
+            {
+              "id": "dry-ice",
+              "label": "Dry ice"
+            }
+          ],
+          "targets": [
+            {
+              "id": "gases",
+              "label": "Class 2 · Gases"
+            },
+            {
+              "id": "liquids",
+              "label": "Class 3 · Flammable liquids"
+            },
+            {
+              "id": "miscellaneous",
+              "label": "Class 9 · Miscellaneous dangerous goods"
+            }
+          ],
+          "correctMap": {
+            "aerosol-spray-paint": "gases",
+            "flammable-paint-thinner": "liquids",
+            "dry-ice": "miscellaneous"
+          },
+          "hintText": "Match each item to its clue: gas under pressure, a flammable liquid, or dry ice. The field guide lists an example for each."
+        },
+        {
+          "id": "recognition-check",
+          "type": "quiz",
+          "title": "Dangerous goods recognition check",
+          "questions": [
+            {
+              "id": "class-count",
+              "prompt": "How many hazard classes are used to describe transport risks?",
+              "options": ["Six", "Eight", "Nine", "Twelve"],
+              "correctIndex": 2,
+              "explanation": "There are nine main hazard classes. Some are split further into divisions.",
+              "timeLimitSec": 25
+            },
+            {
+              "id": "aerosol-class",
+              "prompt": "Which hazard class includes aerosol spray paint?",
+              "options": [
+                "Class 2 · Gases",
+                "Class 3 · Flammable liquids",
+                "Class 7 · Radioactive material",
+                "Class 8 · Corrosive substances"
+              ],
+              "correctIndex": 0,
+              "explanation": "Aerosols are listed under gases because they contain gas under pressure."
+            },
+            {
+              "id": "dry-ice-class",
+              "prompt": "Which hazard class includes dry ice?",
+              "options": [
+                "Class 2 · Gases",
+                "Class 4 · Flammable solids and related hazards",
+                "Class 5 · Oxidizers and organic peroxides",
+                "Class 9 · Miscellaneous dangerous goods"
+              ],
+              "correctIndex": 3,
+              "explanation": "Dry ice is a Class 9 example."
+            },
+            {
+              "id": "cargo-description",
+              "prompt": "Which description gives you the strongest reason to ask about batteries?",
+              "options": [
+                "Empty cardboard cartons",
+                "Rechargeable handheld scanners",
+                "Printed posters",
+                "Cotton caps"
+              ],
+              "correctIndex": 1,
+              "explanation": "Rechargeable electronics can contain lithium batteries. Confirm the actual contents before relying on a cargo description."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "labels-and-markings",
+      "title": "Reading labels and markings",
+      "summary": "Recognise hazard labels, identification numbers, and orientation markings.",
+      "estMinutes": 8,
+      "icon": "tag",
+      "tone": "teal",
+      "unlockRule": {
+        "type": "complete-module",
+        "moduleId": "recognising-dangerous-goods"
+      },
+      "lessons": [
+        {
+          "id": "marking-field-guide",
+          "type": "info",
+          "title": "Three clues on one carton",
+          "body": "A package can carry several kinds of information at the same time. Read each one and compare it with the shipment details. These illustrations are simplified practice examples.",
+          "image": "tag",
+          "funFact": "A single package can have a label for its primary hazard and another for a subsidiary hazard.",
+          "groups": [
+            {
+              "heading": "Hazard label",
+              "examples": "A diamond-shaped label communicates a hazard. For example, a Class 3 label identifies a flammable-liquid hazard.",
+              "visual": "hazard"
+            },
+            {
+              "heading": "UN identification number",
+              "examples": "A number such as UN1263 identifies a dangerous-goods entry. Check it against the shipment information.",
+              "visual": "number"
+            },
+            {
+              "heading": "Orientation arrows",
+              "examples": "When these arrows are present, they show which way is up.",
+              "visual": "arrows"
+            }
+          ],
+          "source": {
+            "label": "FAA marking and labeling guide",
+            "url": "https://www.faa.gov/hazmat/safecargo/how_to_ship/mailing_labeling"
+          }
+        },
+        {
+          "id": "the-two-numbers",
+          "type": "scenario",
+          "title": "The two numbers",
+          "intro": "A carton and its paperwork reach the desk at the same time.",
+          "nodes": [
+            {
+              "id": "first-decision",
+              "text": "The UN identification number on the carton differs from the number on the paperwork.",
+              "illustration": "tag",
+              "choices": [
+                {
+                  "label": "Pause the shipment review and refer the mismatch for verification.",
+                  "nextNodeId": "resolved",
+                  "scoreDelta": 10,
+                  "feedback": "Good catch. Flag the two values so a trained reviewer can resolve the discrepancy.",
+                  "isSafe": true
+                },
+                {
+                  "label": "Treat the paperwork as correct and move on.",
+                  "nextNodeId": "review-needed",
+                  "scoreDelta": -5,
+                  "feedback": "The package marking still conflicts with the paperwork. One value alone cannot resolve the discrepancy.",
+                  "isSafe": false
+                }
+              ]
+            },
+            {
+              "id": "resolved",
+              "text": "The two values are recorded for the reviewer.",
+              "illustration": "check",
+              "choices": [],
+              "outcome": {
+                "summary": "The mismatch was caught before the carton moved on.",
+                "whatWentRight": "You compared the marking and the paperwork instead of trusting one source.",
+                "whatToReview": "A hazard label and a UN number communicate different things."
+              }
+            },
+            {
+              "id": "review-needed",
+              "text": "The unresolved mismatch reaches the next desk.",
+              "illustration": "shield",
+              "choices": [],
+              "outcome": {
+                "summary": "The paperwork check missed a conflict.",
+                "whatWentRight": "You read one of the identifiers.",
+                "whatToReview": "Compare both values and flag any difference."
+              }
+            }
+          ],
+          "source": {
+            "label": "FAA marking and labeling guide",
+            "url": "https://www.faa.gov/hazmat/safecargo/how_to_ship/mailing_labeling"
+          }
+        },
+        {
+          "id": "match-marking-clues",
+          "type": "dragdrop",
+          "title": "Match the package clues",
+          "prompt": "Put each clue in the bin that describes what it communicates.",
+          "items": [
+            {
+              "id": "diamond",
+              "label": "Class 3 hazard diamond"
+            },
+            {
+              "id": "number",
+              "label": "UN1263 marking"
+            },
+            {
+              "id": "arrows",
+              "label": "Paired upward arrows"
+            }
+          ],
+          "targets": [
+            {
+              "id": "hazard",
+              "label": "Type of hazard"
+            },
+            {
+              "id": "entry",
+              "label": "Dangerous-goods entry"
+            },
+            {
+              "id": "position",
+              "label": "Upright orientation"
+            }
+          ],
+          "correctMap": {
+            "diamond": "hazard",
+            "number": "entry",
+            "arrows": "position"
+          },
+          "hintText": "Read the different jobs the symbols do: warn, identify, or show which way is up."
+        },
+        {
+          "id": "marking-check",
+          "type": "quiz",
+          "title": "Labels and markings check",
+          "questions": [
+            {
+              "id": "orientation",
+              "prompt": "What do two upward orientation arrows indicate?",
+              "options": [
+                "Which way is up",
+                "Where to open the carton",
+                "Which carrier owns the carton"
+              ],
+              "correctIndex": 0,
+              "explanation": "Orientation arrows indicate the upright position."
+            },
+            {
+              "id": "diamond",
+              "prompt": "What does a hazard label communicate?",
+              "options": [
+                "The routing airport",
+                "The type of hazard",
+                "The shipment’s price"
+              ],
+              "correctIndex": 1,
+              "explanation": "A hazard label communicates a primary or subsidiary hazard."
+            },
+            {
+              "id": "number",
+              "prompt": "Which of these is an example of a UN identification number marking?",
+              "options": ["Gate 12", "3 kg", "UN1263"],
+              "correctIndex": 2,
+              "explanation": "A UN identification number begins with UN followed by four digits."
+            },
+            {
+              "id": "mismatch",
+              "prompt": "What should happen when an identifier and the paperwork disagree in this training scenario?",
+              "options": [
+                "Pick whichever looks newer",
+                "Flag the mismatch for verification",
+                "Choose based on carton size"
+              ],
+              "correctIndex": 1,
+              "explanation": "An unresolved conflict needs review before a decision is made."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "acceptance-and-packing",
+      "title": "Acceptance and packing checks",
+      "summary": "Practise identifying questions and discrepancies at a cargo desk.",
+      "estMinutes": 10,
+      "icon": "check",
+      "tone": "yellow",
+      "unlockRule": {
+        "type": "complete-module",
+        "moduleId": "labels-and-markings"
+      },
+      "lessons": [
+        {
+          "id": "acceptance-field-guide",
+          "type": "info",
+          "title": "At the acceptance desk",
+          "body": "A check-in decision brings several pieces of information together. Use the approved checks for the shipment and your role, and refer unresolved questions to an authorised reviewer.",
+          "image": "check",
+          "funFact": "Packaging suitability depends on what’s inside and on the transport conditions, even when two boxes look alike.",
+          "groups": [
+            {
+              "heading": "Check the information",
+              "examples": "Compare the shipment details with the visible markings and labels."
+            },
+            {
+              "heading": "Observe package condition",
+              "examples": "Visible damage or a compromised closure can be a reason to pause and escalate."
+            },
+            {
+              "heading": "Use the authorised process",
+              "examples": "Give the reviewer the specific discrepancy and keep the shipment decision pending until it is resolved."
+            }
+          ],
+          "source": {
+            "label": "FAA packaging overview",
+            "url": "https://www.faa.gov/hazmat/safecargo/how_to_ship/package_for_shipping"
+          }
+        },
+        {
+          "id": "the-dented-carton",
+          "type": "scenario",
+          "title": "The dented carton",
+          "intro": "You’re taking over the desk at a busy time. The next carton is described as dangerous goods.",
+          "nodes": [
+            {
+              "id": "first-decision",
+              "text": "The paperwork looks consistent, but the carton has a crushed corner and an open seam.",
+              "illustration": "box",
+              "choices": [
+                {
+                  "label": "Pause and describe the visible damage to the authorised reviewer.",
+                  "nextNodeId": "resolved",
+                  "scoreDelta": 10,
+                  "feedback": "The paperwork is one part of the check. The open seam is a separate concern.",
+                  "isSafe": true
+                },
+                {
+                  "label": "Approve it because the paperwork matches the labels.",
+                  "nextNodeId": "review-needed",
+                  "scoreDelta": -5,
+                  "feedback": "Matching paperwork leaves the condition question unresolved.",
+                  "isSafe": false
+                }
+              ]
+            },
+            {
+              "id": "resolved",
+              "text": "The package is referred for a condition assessment.",
+              "illustration": "check",
+              "choices": [],
+              "outcome": {
+                "summary": "You caught a problem the paperwork could not show.",
+                "whatWentRight": "You separated package condition from documentation.",
+                "whatToReview": "Use the approved process when there is an unresolved concern."
+              }
+            },
+            {
+              "id": "review-needed",
+              "text": "The shipment decision was made without resolving the damage.",
+              "illustration": "shield",
+              "choices": [],
+              "outcome": {
+                "summary": "The physical condition was missed.",
+                "whatWentRight": "You compared the paperwork with the label.",
+                "whatToReview": "Look at package condition as its own part of the review."
+              }
+            }
+          ],
+          "source": {
+            "label": "FAA packaging overview",
+            "url": "https://www.faa.gov/hazmat/safecargo/how_to_ship/package_for_shipping"
+          }
+        },
+        {
+          "id": "sort-desk-notes",
+          "type": "dragdrop",
+          "title": "Sort the desk notes",
+          "prompt": "Match each observation to the part of the check it belongs to.",
+          "items": [
+            {
+              "id": "seam",
+              "label": "A visible split in the seam"
+            },
+            {
+              "id": "paper",
+              "label": "A blank field on the shipment paperwork"
+            },
+            {
+              "id": "label",
+              "label": "An obscured hazard label"
+            }
+          ],
+          "targets": [
+            {
+              "id": "condition",
+              "label": "Package condition"
+            },
+            {
+              "id": "document",
+              "label": "Documentation"
+            },
+            {
+              "id": "mark",
+              "label": "Marks and labels"
+            }
+          ],
+          "correctMap": {
+            "seam": "condition",
+            "paper": "document",
+            "label": "mark"
+          },
+          "hintText": "Ask where you found the issue: on the paperwork, on a label, or on the physical package."
+        },
+        {
+          "id": "acceptance-check",
+          "type": "quiz",
+          "title": "Acceptance and packing check",
+          "questions": [
+            {
+              "id": "condition",
+              "prompt": "Which observation is about the package’s physical condition?",
+              "options": [
+                "An open seam",
+                "An unclear shipping description",
+                "A missing destination address"
+              ],
+              "correctIndex": 0,
+              "explanation": "An open seam is visible damage to the package itself."
+            },
+            {
+              "id": "pressure",
+              "prompt": "A dispatch deadline is approaching and a discrepancy remains. What is the sound decision?",
+              "options": [
+                "Approve it provisionally",
+                "Ask for authorised review",
+                "Rely on the deadline as the decision rule"
+              ],
+              "correctIndex": 1,
+              "explanation": "A deadline doesn’t resolve a discrepancy. Use the approved review process."
+            },
+            {
+              "id": "suitability",
+              "prompt": "What helps determine whether packaging is suitable?",
+              "options": [
+                "The colour of the package",
+                "The package’s position in the queue",
+                "The hazard classification and physical properties of the contents"
+              ],
+              "correctIndex": 2,
+              "explanation": "Packaging selection depends on the material and the applicable conditions for transport."
+            },
+            {
+              "id": "handoff",
+              "prompt": "Which handoff is most useful to a reviewer?",
+              "options": [
+                "Something looks odd",
+                "The outer carton has an open seam on the lower edge",
+                "It’s probably fine"
+              ],
+              "correctIndex": 1,
+              "explanation": "A specific observation is easier for the reviewer to assess."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "id": "emergencies-and-spills",
+      "title": "Emergencies and spills",
+      "summary": "Work through decisions in simulated cargo incidents.",
+      "estMinutes": 10,
+      "icon": "shield",
+      "tone": "blue",
+      "unlockRule": {
+        "type": "complete-module",
+        "moduleId": "acceptance-and-packing"
+      },
+      "lessons": [
+        {
+          "id": "unknown-leak",
+          "type": "scenario",
+          "title": "An unknown leak",
+          "intro": "You are a cargo-desk worker in a simulated facility with a site emergency plan.",
+          "nodes": [
+            {
+              "id": "first-decision",
+              "text": "You notice liquid where a parcel was placed, and you do not know what it is.",
+              "illustration": "shield",
+              "choices": [
+                {
+                  "label": "Move away and report the observation promptly through the site emergency procedure.",
+                  "nextNodeId": "resolved",
+                  "scoreDelta": 10,
+                  "feedback": "Good call. Report what you saw and where you saw it, from a safe place.",
+                  "isSafe": true
+                },
+                {
+                  "label": "Wait for someone else to notice it.",
+                  "nextNodeId": "review-needed",
+                  "scoreDelta": -5,
+                  "feedback": "Waiting delays the report and leaves others unaware of the concern.",
+                  "isSafe": false
+                }
+              ]
+            },
+            {
+              "id": "resolved",
+              "text": "The designated responders receive the report.",
+              "illustration": "check",
+              "choices": [],
+              "outcome": {
+                "summary": "You raised the alert while the substance remained unidentified.",
+                "whatWentRight": "You shared an observable fact and its location.",
+                "whatToReview": "Know the reporting procedure for your site and role."
+              }
+            },
+            {
+              "id": "review-needed",
+              "text": "The concern was left unreported during the shift.",
+              "illustration": "shield",
+              "choices": [],
+              "outcome": {
+                "summary": "The emergency report was delayed.",
+                "whatWentRight": "You noticed the liquid early.",
+                "whatToReview": "Report a suspected incident promptly through the site procedure."
+              }
+            }
+          ],
+          "source": {
+            "label": "OSHA emergency reporting overview",
+            "url": "https://www.osha.gov/etools/evacuation-plans-procedures/eap/reporting-emergencies"
+          }
+        },
+        {
+          "id": "smoke-near-cargo",
+          "type": "scenario",
+          "title": "Smoke near the cargo area",
+          "intro": "You’re in a ground cargo facility in this simulation.",
+          "nodes": [
+            {
+              "id": "first-decision",
+              "text": "You see smoke near a cargo staging bay. Your site plan describes how to report emergencies and evacuate.",
+              "illustration": "shield",
+              "choices": [
+                {
+                  "label": "Follow the site alert and evacuation procedure and give the location when safe.",
+                  "nextNodeId": "resolved",
+                  "scoreDelta": 10,
+                  "feedback": "A clear location helps the response team act. Follow the evacuation instructions for your site.",
+                  "isSafe": true
+                },
+                {
+                  "label": "Wait nearby for a more obvious sign before reporting.",
+                  "nextNodeId": "review-needed",
+                  "scoreDelta": -5,
+                  "feedback": "Smoke is enough to raise a concern. Waiting delays the emergency alert.",
+                  "isSafe": false
+                }
+              ]
+            },
+            {
+              "id": "resolved",
+              "text": "The designated team receives the location and staff follow the plan.",
+              "illustration": "check",
+              "choices": [],
+              "outcome": {
+                "summary": "Your report helped the site response get started.",
+                "whatWentRight": "You raised the alert and followed the site plan.",
+                "whatToReview": "Know the alarm and evacuation procedure before an emergency."
+              }
+            },
+            {
+              "id": "review-needed",
+              "text": "The alert was delayed while staff waited for more information.",
+              "illustration": "shield",
+              "choices": [],
+              "outcome": {
+                "summary": "The response team learned about the concern later.",
+                "whatWentRight": "You recognised something was unusual.",
+                "whatToReview": "Report what you can observe and follow the emergency plan."
+              }
+            }
+          ],
+          "source": {
+            "label": "OSHA emergency reporting overview",
+            "url": "https://www.osha.gov/etools/evacuation-plans-procedures/eap/reporting-emergencies"
+          }
+        },
+        {
+          "id": "damaged-before-handoff",
+          "type": "scenario",
+          "title": "Damage before handoff",
+          "intro": "A colleague spots damage on a dangerous-goods package during a simulated handoff.",
+          "nodes": [
+            {
+              "id": "first-decision",
+              "text": "A side of the carton is torn. The handoff record has already been prepared.",
+              "illustration": "box",
+              "choices": [
+                {
+                  "label": "Keep the handoff pending and report the visible damage through the site procedure.",
+                  "nextNodeId": "resolved",
+                  "scoreDelta": 10,
+                  "feedback": "The prepared record does not settle the new condition issue. Share what changed.",
+                  "isSafe": true
+                },
+                {
+                  "label": "Proceed because the earlier record is already complete.",
+                  "nextNodeId": "review-needed",
+                  "scoreDelta": -5,
+                  "feedback": "The earlier record does not reflect what you can see now.",
+                  "isSafe": false
+                }
+              ]
+            },
+            {
+              "id": "resolved",
+              "text": "The damage is logged and the handoff remains pending review.",
+              "illustration": "check",
+              "choices": [],
+              "outcome": {
+                "summary": "You brought new information into the decision.",
+                "whatWentRight": "You recognised that package condition had changed since the paperwork was prepared.",
+                "whatToReview": "Follow the site’s response process if the situation changes or an immediate hazard is suspected."
+              }
+            },
+            {
+              "id": "review-needed",
+              "text": "The handoff remained dependent on outdated information.",
+              "illustration": "shield",
+              "choices": [],
+              "outcome": {
+                "summary": "New damage was missed in the handoff decision.",
+                "whatWentRight": "You checked that there was a record.",
+                "whatToReview": "Report newly visible damage through the site procedure before proceeding."
+              }
+            }
+          ],
+          "source": {
+            "label": "FAA packaging overview",
+            "url": "https://www.faa.gov/hazmat/safecargo/how_to_ship/package_for_shipping"
+          }
+        },
+        {
+          "id": "emergency-check",
+          "type": "quiz",
+          "title": "Emergency awareness check",
+          "questions": [
+            {
+              "id": "report",
+              "prompt": "Which is the clearest first report from a safe place?",
+              "options": [
+                "Something happened",
+                "I saw liquid beside a carton at bay 4; the substance is unknown",
+                "The carton definitely contains acid"
+              ],
+              "correctIndex": 1,
+              "explanation": "Describe observable facts and the location. Leave unconfirmed details open."
+            },
+            {
+              "id": "authority",
+              "prompt": "What guides your actions in a workplace emergency?",
+              "options": [
+                "Your site’s emergency plan and your assigned role",
+                "The order that parcels arrived",
+                "The last entry on the manifest"
+              ],
+              "correctIndex": 0,
+              "explanation": "Emergency plans define how to report, alert, and evacuate at a site."
+            },
+            {
+              "id": "smoke",
+              "prompt": "You notice smoke in a staging bay. What matters first in this scenario?",
+              "options": [
+                "Completing the shipment record",
+                "Waiting for someone to identify the package",
+                "Promptly following the site’s emergency alert and evacuation procedure"
+              ],
+              "correctIndex": 2,
+              "explanation": "Raise the alert and follow the plan for the location."
+            },
+            {
+              "id": "damage",
+              "prompt": "New visible damage appears after paperwork was prepared. What has changed?",
+              "options": [
+                "The actual condition of the package",
+                "The previous record has been automatically updated",
+                "Only the dispatch schedule"
+              ],
+              "correctIndex": 0,
+              "explanation": "The new observation matters even though the paperwork already exists."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

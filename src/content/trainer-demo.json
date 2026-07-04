@@ -1,0 +1,294 @@
+[
+  {
+    "id": "demo-asha",
+    "name": "Asha Mehta",
+    "modules": {
+      "recognising-dangerous-goods": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-10",
+            "percent": 100,
+            "quiz": "recognition-check",
+            "missed": []
+          }
+        ]
+      },
+      "labels-and-markings": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-12",
+            "percent": 75,
+            "quiz": "marking-check",
+            "missed": ["diamond"]
+          }
+        ]
+      },
+      "acceptance-and-packing": {
+        "completed": false,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-14",
+            "percent": 50,
+            "quiz": "acceptance-check",
+            "missed": ["suitability", "handoff"]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "demo-jordan",
+    "name": "Jordan Bell",
+    "modules": {
+      "recognising-dangerous-goods": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-11",
+            "percent": 75,
+            "quiz": "recognition-check",
+            "missed": ["aerosol-class"]
+          }
+        ]
+      },
+      "labels-and-markings": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-13",
+            "percent": 100,
+            "quiz": "marking-check",
+            "missed": []
+          }
+        ]
+      },
+      "acceptance-and-packing": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-15",
+            "percent": 75,
+            "quiz": "acceptance-check",
+            "missed": ["condition"]
+          }
+        ]
+      },
+      "emergencies-and-spills": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-17",
+            "percent": 100,
+            "quiz": "emergency-check",
+            "missed": []
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "demo-lina",
+    "name": "Lina Reyes",
+    "modules": {
+      "recognising-dangerous-goods": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-12",
+            "percent": 75,
+            "quiz": "recognition-check",
+            "missed": ["class-count"]
+          }
+        ]
+      },
+      "labels-and-markings": {
+        "completed": false,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-14",
+            "percent": 50,
+            "quiz": "marking-check",
+            "missed": ["orientation", "diamond"]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "demo-omar",
+    "name": "Omar Khan",
+    "modules": {
+      "recognising-dangerous-goods": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-13",
+            "percent": 100,
+            "quiz": "recognition-check",
+            "missed": []
+          }
+        ]
+      },
+      "labels-and-markings": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-15",
+            "percent": 75,
+            "quiz": "marking-check",
+            "missed": ["diamond"]
+          }
+        ]
+      },
+      "acceptance-and-packing": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-17",
+            "percent": 100,
+            "quiz": "acceptance-check",
+            "missed": []
+          }
+        ]
+      },
+      "emergencies-and-spills": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-19",
+            "percent": 75,
+            "quiz": "emergency-check",
+            "missed": ["report"]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "demo-sam",
+    "name": "Sam Rivera",
+    "modules": {
+      "recognising-dangerous-goods": {
+        "completed": false,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-14",
+            "percent": 50,
+            "quiz": "recognition-check",
+            "missed": ["class-count", "aerosol-class"]
+          }
+        ]
+      }
+    }
+  },
+  {
+    "id": "demo-mika",
+    "name": "Mika Tan",
+    "modules": {}
+  },
+  {
+    "id": "demo-ellen",
+    "name": "Ellen Brooks",
+    "modules": {
+      "recognising-dangerous-goods": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-16",
+            "percent": 100,
+            "quiz": "recognition-check",
+            "missed": []
+          }
+        ]
+      },
+      "labels-and-markings": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-18",
+            "percent": 75,
+            "quiz": "marking-check",
+            "missed": ["diamond"]
+          }
+        ]
+      },
+      "acceptance-and-packing": {
+        "completed": false,
+        "inProgress": true,
+        "attempts": []
+      }
+    }
+  },
+  {
+    "id": "demo-dev",
+    "name": "Dev Shah",
+    "modules": {
+      "recognising-dangerous-goods": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-17",
+            "percent": 75,
+            "quiz": "recognition-check",
+            "missed": ["aerosol-class"]
+          }
+        ]
+      },
+      "labels-and-markings": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-19",
+            "percent": 75,
+            "quiz": "marking-check",
+            "missed": ["number"]
+          }
+        ]
+      },
+      "acceptance-and-packing": {
+        "completed": true,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-21",
+            "percent": 100,
+            "quiz": "acceptance-check",
+            "missed": []
+          }
+        ]
+      },
+      "emergencies-and-spills": {
+        "completed": false,
+        "inProgress": true,
+        "attempts": [
+          {
+            "day": "2026-11-23",
+            "percent": 50,
+            "quiz": "emergency-check",
+            "missed": ["authority", "smoke"]
+          }
+        ]
+      }
+    }
+  }
+]
